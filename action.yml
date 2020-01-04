@@ -1,0 +1,15 @@
+name: 'Amazon ECS "Download Task Definition" Action for GitHub Actions'
+description: 'Download an Amazon ECS task definition'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  task-definition-path:
+    description: 'The path where task definition should be downloaded to.'
+    required: true
+  task-definition:
+    description: 'You can specify a family and revision to find information about a specific task definition, or you can simply specify the family to find the latest ACTIVE revision in that family.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

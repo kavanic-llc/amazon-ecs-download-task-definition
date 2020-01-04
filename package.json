@@ -1,0 +1,34 @@
+{
+  "name": "aws-actions-amazon-ecs-download-task-definition",
+  "version": "0.0.0",
+  "description": "Download an Amazon ECS task definition",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "package": "ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavanic-llc/amazon-ecs-download-task-definition.git"
+  },
+  "keywords": [
+    "AWS",
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "Kavanic LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kavanic-llc/amazon-ecs-download-task-definition/issues"
+  },
+  "homepage": "https://github.com/kavanic-llc/amazon-ecs-download-task-definition#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "aws-sdk": "^2.597.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.8.0"
+  }
+}
