@@ -25,7 +25,13 @@ async function run() {
                 const taskDefPath = path.isAbsolute(taskDefinitionPath) ?
                     taskDefinitionPath :
                     path.join(process.env.GITHUB_WORKSPACE, taskDefinitionPath);
-                fs.writeFile(taskDefPath, JSON.stringify(data.taskDefinition), 'utf8', function (err) {
+                var taskDef = data.taskDefinition;
+                delete taskDef.taskDefinitionArn;
+                delete taskDef.revision;
+                delete taskDef.status;
+                delete taskDef.requiresAttributes;
+                delete taskDef.compatibilities;
+                fs.writeFile(taskDefPath, JSON.stringify(taskDef), 'utf8', function (err) {
                     if (err) {
                         throw new Error(`Fail to write task definition: ${err.message}`);
                     }
